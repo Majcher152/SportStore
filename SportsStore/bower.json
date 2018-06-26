@@ -1,0 +1,11 @@
+{
+  "name": "asp.net",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Łukasz Majcher"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true
+}
