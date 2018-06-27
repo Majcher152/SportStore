@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -35,6 +36,7 @@ namespace SportsStore.Models
 
         public virtual IEnumerable<CartLine> Lines => lineCollection;
 
+        public CultureInfo Poland = CultureInfo.GetCultureInfo("pl-PL");
 
         public class CartLine
         {
