@@ -151,7 +151,7 @@ namespace SportsStore.Tests
             }.AsQueryable<Product>());
             //Assign - create controller
             AdminController target = new AdminController(mock.Object);
-
+            
             //Act - delete product
             target.Delete(prod.ProductID);
 

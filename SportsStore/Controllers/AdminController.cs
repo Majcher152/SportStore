@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SportsStore.Models;
 
 namespace SportsStore.Components
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private IProductRepository repository;
@@ -43,6 +45,13 @@ namespace SportsStore.Components
                 TempData["message"] = $"Deleted {deletedProduct.Name}.";
             }
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult SeedDatabase()
+        {
+            SeedData.EnsurePopulated(HttpContext.RequestServices);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
